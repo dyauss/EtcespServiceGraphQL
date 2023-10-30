@@ -1,0 +1,41 @@
+type Cliente {
+    id: ID!
+    nome: String
+    cpfCpnj: String
+    dataNascimento: String
+    tipoLogradouro: String
+    logradouro: String
+    numero: String
+    complemento: String
+    cidade: String
+    estado: String
+    cep: String
+    email: String
+    telefone: String
+}
+
+type Query {
+    clientes: [Cliente]
+    cliente(id: ID!): Cliente
+}
+
+type Mutation {
+    criarCliente(cliente: ClienteInput): Cliente
+    atualizarCliente(id: ID!, cliente: ClienteInput): Cliente
+    deletarCliente(id: ID!): Boolean
+}
+
+input ClienteInput {
+    nome: String
+    cpfCpnj: String
+    dataNascimento: String
+    tipoLogradouro: String
+    logradouro: String
+    numero: String
+    complemento: String
+    cidade: String
+    estado: String
+    cep: String
+    email: String
+    telefone: String
+}
