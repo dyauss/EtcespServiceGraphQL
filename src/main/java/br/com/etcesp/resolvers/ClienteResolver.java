@@ -11,7 +11,6 @@ import br.com.etcesp.util.ClienteInput;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import graphql.kickstart.tools.GraphQLQueryResolver;
 
-@CrossOrigin(origins = {"http://localhost:3000"})
 @Component
 public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationResolver {
     private final ClienteRepository clienteRepository;
@@ -20,11 +19,10 @@ public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationRes
         this.clienteRepository = clienteRepository;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     public Cliente criarCliente(ClienteInput clienteInput) {
         Cliente cliente = new Cliente();
         cliente.setNome(clienteInput.getNome());
-        cliente.setCpfCpnj(clienteInput.getCpfCpnj());
+        cliente.setCpfCnpj(clienteInput.getCpfCnpj());
         cliente.setDataNascimento(clienteInput.getDataNascimento());
         cliente.setTipoLogradouro(clienteInput.getTipoLogradouro());
         cliente.setLogradouro(clienteInput.getLogradouro());
@@ -39,7 +37,6 @@ public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationRes
         return clienteRepository.save(cliente);
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     public Cliente atualizarCliente(Long id, ClienteInput clienteInput) {
         Cliente clienteExistente = clienteRepository.findById(id).orElse(null);
         if (clienteExistente == null) {
@@ -47,7 +44,7 @@ public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationRes
         }
 
         clienteExistente.setNome(clienteInput.getNome());
-        clienteExistente.setCpfCpnj(clienteInput.getCpfCpnj());
+        clienteExistente.setCpfCnpj(clienteInput.getCpfCnpj());
         clienteExistente.setDataNascimento(clienteInput.getDataNascimento());
         clienteExistente.setTipoLogradouro(clienteInput.getTipoLogradouro());
         clienteExistente.setLogradouro(clienteInput.getLogradouro());
@@ -62,7 +59,6 @@ public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationRes
         return clienteRepository.save(clienteExistente);
     }
     
-    @CrossOrigin(origins = "http://localhost:3000")
     public Boolean deletarCliente(Long id) {
         Cliente cliente = clienteRepository.findById(id).orElse(null);
         if (cliente == null) {
@@ -74,12 +70,10 @@ public class ClienteResolver implements GraphQLQueryResolver, GraphQLMutationRes
         return true;
     }
 
-    @CrossOrigin(origins = "http://localhost:3000")
     public Cliente cliente(Long id) {
         return clienteRepository.findById(id).orElse(null);
     }
     
-    @CrossOrigin(origins = "http://localhost:3000")
     public List<Cliente> clientes() {
         return clienteRepository.findAll();
     }

@@ -2,7 +2,7 @@ package br.com.etcesp.util;
 
 public class ClienteInput {
     private String nome;
-    private String cpfCpnj;
+    private String cpfCnpj;
     private String dataNascimento;
     private String tipoLogradouro;
     private String logradouro;
@@ -19,7 +19,7 @@ public class ClienteInput {
 			String telefone) {
 		super();
 		this.nome = nome;
-		this.cpfCpnj = cpfCpnj;
+		this.cpfCnpj = cpfCpnj;
 		this.dataNascimento = dataNascimento;
 		this.tipoLogradouro = tipoLogradouro;
 		this.logradouro = logradouro;
@@ -42,11 +42,11 @@ public class ClienteInput {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public String getCpfCpnj() {
-		return cpfCpnj;
+	public String getCpfCnpj() {
+		return cpfCnpj;
 	}
-	public void setCpfCpnj(String cpfCpnj) {
-		this.cpfCpnj = cpfCpnj;
+	public void setCpfCpnj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
 	}
 	public String getDataNascimento() {
 		return dataNascimento;

@@ -11,7 +11,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nome;
-    private String cpfCpnj;
+    private String cpfCnpj;
     private String dataNascimento;
     private String tipoLogradouro;
     private String logradouro;
@@ -23,13 +23,13 @@ public class Cliente {
     private String email;
     private String telefone;
     
-	public Cliente(long id, String nome, String cpfCpnj, String dataNascimento, String tipoLogradouro,
+	public Cliente(long id, String nome, String cpfCnpj, String dataNascimento, String tipoLogradouro,
 			String logradouro, String numero, String complemento, String cidade, String estado, String cep,
 			String email, String telefone) {
 		super();
 		this.id = id;
 		this.nome = nome;
-		this.cpfCpnj = cpfCpnj;
+		this.cpfCnpj = cpfCnpj;
 		this.dataNascimento = dataNascimento;
 		this.tipoLogradouro = tipoLogradouro;
 		this.logradouro = logradouro;
@@ -60,10 +60,10 @@ public class Cliente {
 		this.nome = nome;
 	}
 	public String getCpfCpnj() {
-		return cpfCpnj;
+		return cpfCnpj;
 	}
-	public void setCpfCpnj(String cpfCpnj) {
-		this.cpfCpnj = cpfCpnj;
+	public void setCpfCnpj(String cpfCnpj) {
+		this.cpfCnpj = cpfCnpj;
 	}
 	public String getDataNascimento() {
 		return dataNascimento;
